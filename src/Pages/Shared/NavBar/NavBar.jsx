@@ -1,15 +1,42 @@
+
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { useContext } from "react";
 
-const navItem = <>
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/blogs">Blogs</Link></li>
 
-</>
+
 
 const NavBar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
+
+    const navItem = <>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/blogs">Blogs</Link></li>
+        <li>
+            {
+                user && <img className="h-10" title={user?.displayName} src={user?.photoURL} alt="" />
+            }
+
+            {user ?
+                <button onClick={handleLogOut}>Logout</button> :
+                <Link to="/login">
+                    <button>Login</button>
+                </Link>
+            }
+        </li>
+
+    </>
+
     return (
         <>
-        <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-base-300 text-white">
+            <div className="navbar bg-base-300 text-base-content">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,7 +46,7 @@ const NavBar = () => {
                             {navItem}
                         </ul>
                     </div>
-                    <Link to="/" className="btn btn-ghost normal-case text-xl">Baby Shop</Link>
+                    <Link to="/" className="btn btn-ghost normal-case font-bold text-4xl">Baby Shop</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
