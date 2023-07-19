@@ -18,10 +18,11 @@ const NavBar = () => {
 
     const navItem = <>
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/add-toy">Add Toy</Link></li>
         <li><Link to="/blogs">Blogs</Link></li>
         <li>
             {
-                user && <img className="h-10" title={user?.displayName} src={user?.photoURL} alt="" />
+                user && <img className="w-24 mask mask-squircle" title={user?.displayName} src={user?.photoURL} alt="" />
             }
 
             {user ?
