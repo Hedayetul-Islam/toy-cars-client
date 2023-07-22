@@ -20,19 +20,21 @@ const NavBar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/add-toy">Add Toy</Link></li>
         <li><Link to="/all-toys">All Toys</Link></li>
-        <li><Link to="/blogs">Blogs</Link></li>
-        <li>
-            {
-                user && <img className="w-24 mask mask-squircle" title={user?.displayName} src={user?.photoURL} alt="" />
-            }
 
-            {user ?
-                <button onClick={handleLogOut}>Logout</button> :
-                <Link to="/login">
-                    <button>Login</button>
-                </Link>
-            }
-        </li>
+        <li><Link to="/blogs">Blogs</Link></li>
+        {
+            user && <img className="w-24 mask mask-squircle" title={user?.displayName} src={user?.photoURL} alt="" />
+        }
+
+        {user ?
+            <>
+                <li><Link to="/my-toys">My Toys</Link></li>
+                <li><button onClick={handleLogOut}>Logout</button></li>
+            </> :
+            <li><Link to="/login">
+                <button>Login</button>
+            </Link></li>
+        }
 
     </>
 
