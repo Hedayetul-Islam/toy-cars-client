@@ -19,6 +19,7 @@ const NavBar = () => {
     const navItem = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/add-toy">Add Toy</Link></li>
+        <li><Link to="/all-toys">All Toys</Link></li>
         <li><Link to="/blogs">Blogs</Link></li>
         <li>
             {
