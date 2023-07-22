@@ -11,16 +11,30 @@ const AddToy = () => {
         const form = event.target;
         const toy = form.toy.value;
         const photo = form.photo.value;
-        const name = user?.name;
+        const name = form.name.value;
         const email = user?.email;
-        const category = form.category.value;
+        const subCategory = form.subCategory.value;
         const price = form.price.value;
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const description = form.description.value;
-        const details = {toy, photo, name, email, category, price, rating, quantity, description}
+        const details = {
+            sellerName: name,
+            toyName: toy, photo, email, subCategory, price, rating, quantity, description}
 
         console.log(details)
+
+        fetch('http://localhost:5000/cars', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json' 
+            },
+            body: JSON.stringify(details)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
 
 
     }
@@ -58,7 +72,7 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Sub-category</span>
                         </label>
-                        <input type="text" name="category" className="input input-bordered" />
+                        <input type="text" name="subCategory" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
