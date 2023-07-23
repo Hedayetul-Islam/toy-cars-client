@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
     
@@ -33,7 +34,15 @@ const AddToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(data);
+            if(data.insertedId > 0){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Toy Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
         })
 
 
@@ -100,7 +109,7 @@ const AddToy = () => {
                     </div>
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Add Toy" />
+                    <input className="btn btn-neutral btn-block" type="submit" value="Add Toy" />
                 </div>
             </form>
         </div>

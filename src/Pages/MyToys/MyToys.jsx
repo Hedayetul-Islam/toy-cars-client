@@ -36,16 +36,13 @@ const MyToys = () => {
 
     return (
         <div>
-            <h2>my toys: {mytoys.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
-                    <thead>
+                    <thead className="font-bold text-black">
                         <tr>
                             <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
+                                
                             </th>
                             <th>ToyName & SellerName</th>
                             <th>Email & Quantity</th>

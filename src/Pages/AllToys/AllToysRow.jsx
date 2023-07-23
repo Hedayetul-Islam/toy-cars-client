@@ -13,10 +13,10 @@ const AllToysRow = ({ allToy }) => {
             </td>
             <td>${price}
             </td>
-            <td className="badge badge-primary badge-sm">{quantity}
+            <td>{quantity}
             </td>
             <th>
-                <Link to={`/details/${_id}`}><button className="btn btn-ghost btn-xs">View Details</button></Link>
+                <Link to={`/details/${_id}`}><button className="btn btn-secondary btn-xs">View Details</button></Link>
             </th>
         </tr>
     );

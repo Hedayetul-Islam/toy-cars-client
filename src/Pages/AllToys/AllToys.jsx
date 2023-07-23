@@ -15,7 +15,7 @@ const AllToys = () => {
         <div className="overflow-x-auto">
             <table className="table">
                 {/* head */}
-                <thead>
+                <thead className="text-black">
                     <tr>
                         <th>SellerName</th>
                         <th>ToyName</th>
