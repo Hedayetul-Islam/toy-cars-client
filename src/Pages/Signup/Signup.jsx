@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 
 const Signup = () => {
@@ -41,6 +42,9 @@ const Signup = () => {
 
     return (
         <div className="hero min-h-screen bg-gray-500">
+            <Helmet>
+                <title>Baby Shop | SignUp</title>
+            </Helmet>
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Please Sign Up!</h1>

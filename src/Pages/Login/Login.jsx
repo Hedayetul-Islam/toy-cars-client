@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { app } from '../../firebase/firebase.config';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     // const [user, setUser] = useState()
@@ -47,6 +48,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-gray-500">
+            <Helmet>
+                <title>Baby Shop | Login</title>
+            </Helmet>
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>

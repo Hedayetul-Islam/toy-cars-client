@@ -1,7 +1,11 @@
+import { Helmet } from "react-helmet-async";
 
 const Blogs = () => {
     return (
         <div className="text-justify p-10">
+            <Helmet>
+                <title>Baby Shop | Blogs</title>
+            </Helmet>
             <h3>1. What is an access token and refresh token?</h3>
             <p>An access token and a refresh token are two concepts often used in authentication and authorization mechanisms, especially in the context of web applications and APIs. They are used to provide secure access to resources on behalf of a user or an application without requiring the user to repeatedly enter their credentials (e.g., username and password).</p>
             <h3>2. How do they work and where should we store them on the client-side?</h3>
