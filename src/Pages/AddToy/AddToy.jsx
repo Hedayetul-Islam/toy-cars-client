@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const AddToy = () => {
@@ -26,7 +25,7 @@ const AddToy = () => {
 
         console.log(details)
 
-        fetch('http://localhost:5000/cars', {
+        fetch('https://baby-shop-server-six.vercel.app/cars', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json' 
@@ -36,14 +35,6 @@ const AddToy = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            if(data.insertedId > 0){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Toy Added Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-            }
         })
 
 

@@ -37,7 +37,7 @@ export const router = createBrowserRouter([
         },
         {
           path: 'add-toy',
-          element: <AddToy></AddToy>
+          element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
         },
         {
           path: 'all-toys',
@@ -50,12 +50,12 @@ export const router = createBrowserRouter([
         {
           path: 'details/:id',
           element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`)
+          loader: ({params}) => fetch(`https://baby-shop-server-six.vercel.app/cars/${params.id}`)
         },
         {
           path: 'updateToy/:id',
           element: <UpdateToy></UpdateToy>,
-          loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`)
+          loader: ({params}) => fetch(`https://baby-shop-server-six.vercel.app/cars/${params.id}`)
         }
       ]
     },
