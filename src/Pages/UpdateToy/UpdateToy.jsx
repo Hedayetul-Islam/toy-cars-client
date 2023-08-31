@@ -32,7 +32,7 @@ const UpdateToy = () => {
                     title: 'Success!',
                     text: 'Toy Updated Successfully',
                     icon: 'success',
-                    confirmButtonText: 'Cool'
+                    confirmButtonText: 'Ok'
                 })
             }
         })

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
     
@@ -35,6 +36,14 @@ const AddToy = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if (data.insertedId > 0) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Toy Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+            }
         })
 
 

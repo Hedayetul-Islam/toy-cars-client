@@ -4,8 +4,6 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { useContext } from "react";
 
 
-
-
 const NavBar = () => {
 
     const { user, logOut } = useContext(AuthContext);
@@ -23,7 +21,7 @@ const NavBar = () => {
 
         <li><Link to="/blogs">Blogs</Link></li>
         {
-            user && <img className="w-24 mask mask-squircle" title={user?.displayName} src={user?.photoURL} alt="" />
+            user && <img className="w-16 h-16 rounded-full" title={user?.displayName} src={user?.photoURL} alt="" />
         }
 
         {user ?
@@ -40,9 +38,9 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="navbar bg-base-300 text-base-content">
+            <div className="navbar text-base-content">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown z-30">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
@@ -50,10 +48,10 @@ const NavBar = () => {
                             {navItem}
                         </ul>
                     </div>
-                    <Link to="/" className="btn btn-ghost normal-case font-bold text-4xl">Baby Shop</Link>
+                    <Link to="/" className="btn btn-ghost font-serif text-4xl text-indigo-900">Baby Shop</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu text-lg font-serif font-medium menu-horizontal px-1 text-indigo-900">
                         {navItem}
                     </ul>
                 </div>
