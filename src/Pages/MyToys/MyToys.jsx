@@ -43,7 +43,7 @@ const MyToys = () => {
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
-                    <thead className="font-bold text-black">
+                    <thead className="font-bold text-black bg-slate-100">
                         <tr>
                             <th>
                                 

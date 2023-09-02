@@ -1,13 +1,13 @@
 
 const Gallery = () => {
     return (
-        <div className="bg-slate-200">
+        <div>
             <div className="text-center pt-14">
-                <h2 className="uppercase text-6xl font-bold ">Gallery of toy cars</h2>
-                <p className="p-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis atque quasi doloremque? In laboriosam aspernatur esse, obcaecati alias suscipit quod culpa ipsam est nulla explicabo?</p>
+                <h2 className="text-5xl font-bold ">Gallery of Cars</h2>
+                <p className="p-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br /> Omnis atque quasi doloremque? In laboriosam aspernatur esse, obcaecati alias suscipit quod culpa ipsam est nulla explicabo?</p>
             </div>
-            <div>
-                <div className="carousel w-full">
+            <div className="text-center">
+                <div className="carousel w-4/5 items-center">
                     <div id="item1" className="carousel-item w-full">
                         <img src="https://images.pexels.com/photos/2527931/pexels-photo-2527931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-full" />
                     </div>

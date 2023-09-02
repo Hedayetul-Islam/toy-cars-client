@@ -1,7 +1,7 @@
 
 const Banner = () => {
     return (
-        <div>
+        <div className="mb-12">
             <div className="carousel w-full flex flex-wrap">
                 <div id="item1" className="carousel-item lg:w-full md:w-full sm:w-1/2">
                     <img src="https://images.pexels.com/photos/97353/pexels-photo-97353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-full" />
