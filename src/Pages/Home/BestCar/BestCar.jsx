@@ -2,7 +2,7 @@
 const BestCar = () => {
     return (
         <div className="mb-12">
-            <h3 className="text-center font-bold text-5xl mt-8 mb-4">Best Car</h3>
+            <h3 className="text-center font-bold text-5xl mt-8 mb-4">Best Cars</h3>
             <p className="text-center mb-6">Toy cars are miniature wonders that capture the hearts and imaginations of both young and old. <br /> They hold a timeless appeal, reminding us of the joy and fascination we experienced during our own childhoods.</p>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
                 <div className="card card-compact w-full bg-base-100 shadow-xl">
