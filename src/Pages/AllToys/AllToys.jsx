@@ -5,12 +5,21 @@ import { Helmet } from "react-helmet-async";
 const AllToys = () => {
 
     const [allToys, setAllToys] = useState([]);
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
         fetch('https://baby-shop-server-six.vercel.app/cars')
             .then(res => res.json())
-            .then(data => setAllToys(data))
+            .then(data => {
+                setAllToys(data)
+                setLoading(false)
+            })
     }, [])
+
+    if (loading) {
+        return <progress className="progress w-56"></progress>
+    }
 
     return (
         <div className="overflow-x-auto">
